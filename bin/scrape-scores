@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -e
+
+cd ../scrapped
+
+# # remove all the existing files
+rm ./*
+
+ # Wimbledon Men
+ # Wimbledon 1 krog
+ curl "http://www.zsport.net/?page_id=1831&liga=123&krog=405" > "wimbledon-men-1.html"
+ curl "http://www.zsport.net/?page_id=1831&liga=123&krog=420" > "wimbledon-men-2.html"
+ curl "http://www.zsport.net/?page_id=1831&liga=123&krog=431" > "wimbledon-men-3.html"
+
+ # export the matches
+ node ../scripts/extract-matches.js 'wimbledon-men.csv' 'wimbledon-men-1.html' 'wimbledon-men-2.html' 'wimbledon-men-3.html'
+ node ../scripts/rank-players.js 'wimbledon-men.csv' 'wimbledon-men-ranked.txt'
+
+ # Z-Sport Mixed Doubles
+ curl "http://www.zsport.net/?page_id=1831&liga=128&krog=416" > "z-sport-mixed-doubles-1.html"
+ curl "http://www.zsport.net/?page_id=1831&liga=128&krog=438" > "z-sport-mixed-doubles-2.html"
+
+node ../scripts/extract-matches.js 'z-sport-mixed-doubles.csv' 'z-sport-mixed-doubles-1.html' 'z-sport-mixed-doubles-2.html'
+node ../scripts/rank-players.js 'z-sport-mixed-doubles.csv' 'z-sport-mixed-doubles-ranked.txt'
+
+# Z-Sport Men
+curl "http://www.zsport.net/?page_id=1831&liga=121&krog=402" > "z-sport-men-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=121&krog=418" > "z-sport-men-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=121&krog=439" > "z-sport-men-3.html"
+node ../scripts/extract-matches.js 'z-sport-men.csv' 'z-sport-men-1.html' 'z-sport-men-2.html' 'z-sport-men-3.html'
+node ../scripts/rank-players.js 'z-sport-men.csv' 'z-sport-men-ranked.txt'

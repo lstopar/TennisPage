@@ -1,0 +1,9 @@
+FinishedMatch{_homeTeam=Team{_teamId=Magajne Toni},_awayTeam=Team{_teamId=Zajc Janez},_setScores=SetScore{_homeScore=6,_awayScore=3},SetScore{_homeScore=7,_awayScore=5},_forfeitSide=null,winner=Mag
+ajne Toni},
+
+FinishedMatch{_homeTeam=Team{_teamId=Blaganje Luka},_awayTeam=Team{_teamId=Magajne Toni},_setScores=SetScore{_homeScore=4,_awayScore=6},SetScore{_homeScore=6,_awayScore=3},[object Object],_forfeitSide=null,winner=Ma
+gajne Toni},
+
+FinishedMatch{_homeTeam=Team{_teamId=Magajne Toni},_awayTeam=Team{_teamId=Klemenčič Miha},_setScores=SetScore{_homeScore=6,_awayScore=4},SetScore{_homeScore=6,_awayScore=3},_forfeitSide=null,winner=Magajne Toni},
+
+FinishedMatch{_homeTeam=Team{_teamId=Magajne Toni},_awayTeam=Team{_teamId=Snoj Peter},_setScores=null,_forfeitSide=1,winner=Magajne Toni}
