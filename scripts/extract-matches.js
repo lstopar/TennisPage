@@ -37,6 +37,9 @@ function extractMatches(inputFName) {
                 matches.push(new structs.FinishedMatch(homeTeam, awayTeam, null, structs.HomeAway.AWAY));
             } else if (forfeightText == 'Predaja igralec 1') {
                 matches.push(new structs.FinishedMatch(homeTeam, awayTeam, null, structs.HomeAway.HOME));
+            } else if (forfeightText == 'BB') {
+                // "Brez Boja" - the match didn't happen and no points were awarded
+                return;
             } else {
                 throw new Error('Invalid forfeight text: ' + forfeightText);
             }

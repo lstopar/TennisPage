@@ -7,26 +7,202 @@ cd ../scrapped
 # # remove all the existing files
 rm ./*
 
- # Wimbledon Men
- # Wimbledon 1 krog
- curl "http://www.zsport.net/?page_id=1831&liga=123&krog=405" > "wimbledon-men-1.html"
- curl "http://www.zsport.net/?page_id=1831&liga=123&krog=420" > "wimbledon-men-2.html"
- curl "http://www.zsport.net/?page_id=1831&liga=123&krog=431" > "wimbledon-men-3.html"
 
- # export the matches
- node ../scripts/extract-matches.js 'wimbledon-men.csv' 'wimbledon-men-1.html' 'wimbledon-men-2.html' 'wimbledon-men-3.html'
- node ../scripts/rank-players.js 'wimbledon-men.csv' 'wimbledon-men-ranked.txt'
+# Roland Garros +
+curl "http://www.zsport.net/?page_id=1831&liga=154&krog=445" > "rg-plus-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=154&krog=465" > "rg-plus-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=154&krog=469" > "rg-plus-3.html"
+curl "http://www.zsport.net/?page_id=1831&liga=154&krog=491" > "rg-plus-4.html"
+curl "http://www.zsport.net/?page_id=1831&liga=154&krog=499" > "rg-plus-5.html"
 
- # Z-Sport Mixed Doubles
- curl "http://www.zsport.net/?page_id=1831&liga=128&krog=416" > "z-sport-mixed-doubles-1.html"
- curl "http://www.zsport.net/?page_id=1831&liga=128&krog=438" > "z-sport-mixed-doubles-2.html"
+node ../scripts/extract-matches.js 'rg-plus.csv' 'rg-plus-1.html' 'rg-plus-2.html' 'rg-plus-3.html' 'rg-plus-4.html' 'rg-plus-5.html'
+node ../scripts/rank-players.js 'rg-plus.csv' 'rg-plus-ranked.txt'
 
-node ../scripts/extract-matches.js 'z-sport-mixed-doubles.csv' 'z-sport-mixed-doubles-1.html' 'z-sport-mixed-doubles-2.html'
-node ../scripts/rank-players.js 'z-sport-mixed-doubles.csv' 'z-sport-mixed-doubles-ranked.txt'
 
-# Z-Sport Men
-curl "http://www.zsport.net/?page_id=1831&liga=121&krog=402" > "z-sport-men-1.html"
-curl "http://www.zsport.net/?page_id=1831&liga=121&krog=418" > "z-sport-men-2.html"
-curl "http://www.zsport.net/?page_id=1831&liga=121&krog=439" > "z-sport-men-3.html"
-node ../scripts/extract-matches.js 'z-sport-men.csv' 'z-sport-men-1.html' 'z-sport-men-2.html' 'z-sport-men-3.html'
-node ../scripts/rank-players.js 'z-sport-men.csv' 'z-sport-men-ranked.txt'
+# Roland Garros moška skupina
+curl "http://www.zsport.net/?page_id=1831&liga=142&krog=444" > "rg-men-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=142&krog=464" > "rg-men-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=142&krog=470" > "rg-men-3.html"
+curl "http://www.zsport.net/?page_id=1831&liga=142&krog=490" > "rg-men-4.html"
+curl "http://www.zsport.net/?page_id=1831&liga=142&krog=500" > "rg-men-5.html"
+
+node ../scripts/extract-matches.js 'rg-men.csv' 'rg-men-1.html' 'rg-men-2.html' 'rg-men-3.html' 'rg-men-4.html' 'rg-men-5.html'
+node ../scripts/rank-players.js 'rg-men.csv' 'rg-men-ranked.txt'
+
+# US open moška skupina
+curl "http://www.zsport.net/?page_id=1831&liga=143&krog=446" > "us-men-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=143&krog=466" > "us-men-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=143&krog=471" > "us-men-3.html"
+curl "http://www.zsport.net/?page_id=1831&liga=143&krog=492" > "us-men-4.html"
+curl "http://www.zsport.net/?page_id=1831&liga=143&krog=501" > "us-men-5.html"
+
+node ../scripts/extract-matches.js 'us-men.csv' 'us-men-1.html' 'us-men-2.html' 'us-men-3.html' 'us-men-4.html' 'us-men-5.html'
+node ../scripts/rank-players.js 'us-men.csv' 'us-men-ranked.txt'
+
+
+# Wimbledon mešane dvojice
+curl "http://www.zsport.net/?page_id=1831&liga=153&krog=451" > "wbd-doubles-mixed-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=153&krog=485" > "wbd-doubles-mixed-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=153&krog=511" > "wbd-doubles-mixed-3.html"
+
+node ../scripts/extract-matches.js 'wbd-doubles-mixed.csv' 'wbd-doubles-mixed-1.html' 'wbd-doubles-mixed-2.html' 'wbd-doubles-mixed-3.html'
+node ../scripts/rank-players.js 'wbd-doubles-mixed.csv' 'wbd-doubles-mixed-ranked.txt'
+
+
+# Wimbledon moška skupina
+curl "http://www.zsport.net/?page_id=1831&liga=140&krog=447" > "wbd-men-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=140&krog=461" > "wbd-men-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=140&krog=472" > "wbd-men-3.html"
+curl "http://www.zsport.net/?page_id=1831&liga=140&krog=488" > "wbd-men-4.html"
+curl "http://www.zsport.net/?page_id=1831&liga=140&krog=497" > "wbd-men-5.html"
+
+node ../scripts/extract-matches.js 'wbd-men.csv' 'wbd-men-1.html' 'wbd-men-2.html' 'wbd-men-3.html' 'wbd-men-4.html' 'wbd-men-5.html'
+node ../scripts/rank-players.js 'wbd-men.csv' 'wbd-men-ranked.txt'
+
+
+
+# Wimbledon moške dvojice
+curl "http://www.zsport.net/?page_id=1831&liga=148&krog=452" > "wbd-doubles-men-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=148&krog=480" > "wbd-doubles-men-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=148&krog=506" > "wbd-doubles-men-3.html"
+
+node ../scripts/extract-matches.js 'wbd-doubles-men.csv' 'wbd-doubles-men-1.html' 'wbd-doubles-men-2.html' 'wbd-doubles-men-3.html'
+node ../scripts/rank-players.js 'wbd-doubles-men.csv' 'wbd-doubles-men-ranked.txt'
+
+
+# Wimbledon moške dvojice +
+curl "http://www.zsport.net/?page_id=1831&liga=149&krog=453" > "wbd-plus-doubles-men-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=149&krog=479" > "wbd-plus-doubles-men-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=149&krog=505" > "wbd-plus-doubles-men-3.html"
+
+node ../scripts/extract-matches.js 'wbd-plus-doubles-men.csv' 'wbd-plus-doubles-men-1.html' 'wbd-plus-doubles-men-2.html' 'wbd-plus-doubles-men-3.html'
+node ../scripts/rank-players.js 'wbd-plus-doubles-men.csv' 'wbd-plus-doubles-men-ranked.txt'
+
+
+# Wimbledon moški +
+curl "http://www.zsport.net/?page_id=1831&liga=141&krog=448" > "wbd-plus-men-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=141&krog=462" > "wbd-plus-men-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=141&krog=473" > "wbd-plus-men-3.html"
+curl "http://www.zsport.net/?page_id=1831&liga=141&krog=487" > "wbd-plus-men-4.html"
+curl "http://www.zsport.net/?page_id=1831&liga=141&krog=496" > "wbd-plus-men-5.html"
+
+node ../scripts/extract-matches.js 'wbd-plus-men.csv' 'wbd-plus-men-1.html' 'wbd-plus-men-2.html' 'wbd-plus-men-3.html' 'wbd-plus-men-4.html' 'wbd-plus-men-5.html'
+node ../scripts/rank-players.js 'wbd-plus-men.csv' 'wbd-plus-men-ranked.txt'
+
+
+# Wimbledon ženska skupina
+curl "http://www.zsport.net/?page_id=1831&liga=146&krog=459" > "wbd-women-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=146&krog=468" > "wbd-women-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=146&krog=474" > "wbd-women-3.html"
+curl "http://www.zsport.net/?page_id=1831&liga=146&krog=494" > "wbd-women-4.html"
+curl "http://www.zsport.net/?page_id=1831&liga=146&krog=503" > "wbd-women-5.html"
+
+node ../scripts/extract-matches.js 'wbd-women.csv' 'wbd-women-1.html' 'wbd-women-2.html' 'wbd-women-3.html' 'wbd-women-4.html' 'wbd-women-5.html'
+node ../scripts/rank-players.js 'wbd-women.csv' 'wbd-women-ranked.txt'
+
+
+
+# Wimbledon ženske dvojice
+curl "http://www.zsport.net/?page_id=1831&liga=151&krog=454" > "wbd-doubles-women-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=151&krog=482" > "wbd-doubles-women-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=151&krog=508" > "wbd-doubles-women-3.html"
+
+node ../scripts/extract-matches.js 'wbd-doubles-women.csv' 'wbd-doubles-women-1.html' 'wbd-doubles-women-2.html' 'wbd-doubles-women-3.html'
+node ../scripts/rank-players.js 'wbd-doubles-women.csv' 'wbd-doubles-women-ranked.txt'
+
+
+
+# Zsport 45+ moški
+curl "http://www.zsport.net/?page_id=1831&liga=144&krog=449" > "zsport-45-men-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=144&krog=463" > "zsport-45-men-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=144&krog=475" > "zsport-45-men-3.html"
+curl "http://www.zsport.net/?page_id=1831&liga=144&krog=489" > "zsport-45-men-4.html"
+curl "http://www.zsport.net/?page_id=1831&liga=144&krog=498" > "zsport-45-men-5.html"
+
+node ../scripts/extract-matches.js 'zsport-45-men.csv' 'zsport-45-men-1.html' 'zsport-45-men-2.html' 'zsport-45-men-3.html' 'zsport-45-men-4.html' 'zsport-45-men-5.html'
+node ../scripts/rank-players.js 'zsport-45-men.csv' 'zsport-45-men-ranked.txt'
+
+
+
+# Zsport mešane dvojice
+curl "http://www.zsport.net/?page_id=1831&liga=152&krog=455" > "zsport-doubles-mixed-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=152&krog=483" > "zsport-doubles-mixed-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=152&krog=509" > "zsport-doubles-mixed-3.html"
+
+node ../scripts/extract-matches.js 'zsport-doubles-mixed.csv' 'zsport-doubles-mixed-1.html' 'zsport-doubles-mixed-2.html' 'zsport-doubles-mixed-3.html'
+node ../scripts/rank-players.js 'zsport-doubles-mixed.csv' 'zsport-doubles-mixed-ranked.txt'
+
+
+
+# Zsport moška skupina
+curl "http://www.zsport.net/?page_id=1831&liga=139&krog=443" > "zsport-men-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=139&krog=460" > "zsport-men-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=139&krog=476" > "zsport-men-3.html"
+curl "http://www.zsport.net/?page_id=1831&liga=139&krog=486" > "zsport-men-4.html"
+curl "http://www.zsport.net/?page_id=1831&liga=139&krog=495" > "zsport-men-5.html"
+
+node ../scripts/extract-matches.js 'zsport-men.csv' 'zsport-men-1.html' 'zsport-men-2.html' 'zsport-men-3.html' 'zsport-men-4.html' 'zsport-men-5.html'
+node ../scripts/rank-players.js 'zsport-men.csv' 'zsport-men-ranked.txt'
+
+
+# Zsport moške dvojice
+curl "http://www.zsport.net/?page_id=1831&liga=147&krog=456" > "zsport-doubles-men-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=147&krog=478" > "zsport-doubles-men-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=147&krog=504" > "zsport-doubles-men-3.html"
+
+node ../scripts/extract-matches.js 'zsport-doubles-men.csv' 'zsport-doubles-men-1.html' 'zsport-doubles-men-2.html' 'zsport-doubles-men-3.html'
+node ../scripts/rank-players.js 'zsport-doubles-men.csv' 'zsport-doubles-men-ranked.txt'
+
+
+# Zsport ženska skupina
+curl "http://www.zsport.net/?page_id=1831&liga=145&krog=450" > "zsport-women-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=145&krog=467" > "zsport-women-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=145&krog=477" > "zsport-women-3.html"
+curl "http://www.zsport.net/?page_id=1831&liga=145&krog=493" > "zsport-women-4.html"
+curl "http://www.zsport.net/?page_id=1831&liga=145&krog=502" > "zsport-women-5.html"
+
+node ../scripts/extract-matches.js 'zsport-women.csv' 'zsport-women-1.html' 'zsport-women-2.html' 'zsport-women-3.html' 'zsport-women-4.html' 'zsport-women-5.html'
+node ../scripts/rank-players.js 'zsport-women.csv' 'zsport-women-ranked.txt'
+
+
+# Zsport ženske dvojice
+curl "http://www.zsport.net/?page_id=1831&liga=150&krog=457" > "zsport-doubles-women-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=150&krog=481" > "zsport-doubles-women-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=150&krog=507" > "zsport-doubles-women-3.html"
+
+node ../scripts/extract-matches.js 'zsport-doubles-women.csv' 'zsport-doubles-women-1.html' 'zsport-doubles-women-2.html' 'zsport-doubles-women-3.html'
+node ../scripts/rank-players.js 'zsport-doubles-women.csv' 'zsport-doubles-women-ranked.txt'
+
+
+# Wimbledon mešane dvojice +
+curl "http://www.zsport.net/?page_id=1831&liga=156&krog=458" > "zsport-doubles-mixed-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=156&krog=484" > "zsport-doubles-mixed-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=156&krog=510" > "zsport-doubles-mixed-3.html"
+
+node ../scripts/extract-matches.js 'zsport-doubles-mixed.csv' 'zsport-doubles-mixed-1.html' 'zsport-doubles-mixed-2.html' 'zsport-doubles-mixed-3.html'
+node ../scripts/rank-players.js 'zsport-doubles-mixed.csv' 'zsport-doubles-mixed-ranked.txt'
+
+
+# # Wimbledon Men
+# # Wimbledon 1 krog
+# curl "http://www.zsport.net/?page_id=1831&liga=123&krog=405" > "wimbledon-men-1.html"
+# curl "http://www.zsport.net/?page_id=1831&liga=123&krog=420" > "wimbledon-men-2.html"
+# curl "http://www.zsport.net/?page_id=1831&liga=123&krog=431" > "wimbledon-men-3.html"
+
+# # export the matches
+# node ../scripts/extract-matches.js 'wimbledon-men.csv' 'wimbledon-men-1.html' 'wimbledon-men-2.html' 'wimbledon-men-3.html'
+# node ../scripts/rank-players.js 'wimbledon-men.csv' 'wimbledon-men-ranked.txt'
+
+# # Z-Sport Mixed Doubles
+# curl "http://www.zsport.net/?page_id=1831&liga=128&krog=416" > "z-sport-mixed-doubles-1.html"
+# curl "http://www.zsport.net/?page_id=1831&liga=128&krog=438" > "z-sport-mixed-doubles-2.html"
+
+# node ../scripts/extract-matches.js 'z-sport-mixed-doubles.csv' 'z-sport-mixed-doubles-1.html' 'z-sport-mixed-doubles-2.html'
+# node ../scripts/rank-players.js 'z-sport-mixed-doubles.csv' 'z-sport-mixed-doubles-ranked.txt'
+
+# # Z-Sport Men
+# curl "http://www.zsport.net/?page_id=1831&liga=121&krog=402" > "z-sport-men-1.html"
+# curl "http://www.zsport.net/?page_id=1831&liga=121&krog=418" > "z-sport-men-2.html"
+# curl "http://www.zsport.net/?page_id=1831&liga=121&krog=439" > "z-sport-men-3.html"
+# node ../scripts/extract-matches.js 'z-sport-men.csv' 'z-sport-men-1.html' 'z-sport-men-2.html' 'z-sport-men-3.html'
+# node ../scripts/rank-players.js 'z-sport-men.csv' 'z-sport-men-ranked.txt'
