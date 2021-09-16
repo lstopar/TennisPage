@@ -175,12 +175,12 @@ node ../scripts/rank-players.js 'zsport-doubles-women.csv' 'zsport-doubles-women
 
 
 # Wimbledon mešane dvojice +
-curl "http://www.zsport.net/?page_id=1831&liga=156&krog=458" > "zsport-doubles-mixed-1.html"
-curl "http://www.zsport.net/?page_id=1831&liga=156&krog=484" > "zsport-doubles-mixed-2.html"
-curl "http://www.zsport.net/?page_id=1831&liga=156&krog=510" > "zsport-doubles-mixed-3.html"
+curl "http://www.zsport.net/?page_id=1831&liga=156&krog=458" > "wbd-plus-doubles-mixed-1.html"
+curl "http://www.zsport.net/?page_id=1831&liga=156&krog=484" > "wbd-plus-doubles-mixed-2.html"
+curl "http://www.zsport.net/?page_id=1831&liga=156&krog=510" > "wbd-plus-doubles-mixed-3.html"
 
-node ../scripts/extract-matches.js 'zsport-doubles-mixed.csv' 'zsport-doubles-mixed-1.html' 'zsport-doubles-mixed-2.html' 'zsport-doubles-mixed-3.html'
-node ../scripts/rank-players.js 'zsport-doubles-mixed.csv' 'zsport-doubles-mixed-ranked.txt'
+node ../scripts/extract-matches.js 'wbd-plus-doubles-mixed.csv' 'wbd-plus-doubles-mixed-1.html' 'wbd-plus-doubles-mixed-2.html' 'wbd-plus-doubles-mixed-3.html'
+node ../scripts/rank-players.js 'wbd-plus-doubles-mixed.csv' 'wbd-plus-doubles-mixed-ranked.txt'
 
 
 # # Wimbledon Men
